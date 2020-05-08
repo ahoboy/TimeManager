@@ -9,7 +9,7 @@
     function tiaozhuan()
     {
         if(time==0)
-            window.location="index.jsp";
+            window.location="index";
         document.all.tiao.innerText="注册失败,"+time+"秒后跳转到网站首页";
         time--;
     }

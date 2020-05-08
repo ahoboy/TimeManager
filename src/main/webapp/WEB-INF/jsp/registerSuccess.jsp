@@ -116,7 +116,7 @@ body {
 		<div class="alert-concent">
 			<p>注册成功，前往登录</p>
 		</div>
-		<a href="login.jsp" id="tiao" class="alert-btn" >立即前往登陆</a>
+		<a href="login" id="tiao" class="alert-btn" >立即前往登陆</a>
 	</div>
 	<div class="alert-footer clearfix">
 		<svg width="46px" height="42px" class="alert-footer-icon">
@@ -139,7 +139,7 @@ function alertSet(e) {
     document.getElementById("js-sec-text").innerHTML = t,
     setInterval(function() {
         if (0 == t){
-			location.href="login.jsp";
+			location.href="login";
 		}else {
             t -= 1,
             document.getElementById("js-sec-text").innerHTML = t;

@@ -78,4 +78,37 @@ public class JSPController {
 		response.addCookie(cookie_password);
 		return "index";
 	}
+	
+	@RequestMapping(value="/userRegister", method=RequestMethod.POST)
+	public String userRegister(HttpServletRequest request, HttpServletResponse response){
+		
+		String userName=request.getParameter("username");
+		String userPass=request.getParameter("password");
+		String telephone = request.getParameter("telephone");
+		String sex = request.getParameter("sex");
+		
+		OwnerEntity owner = new OwnerEntity();
+		owner.setOname(userName);
+		owner.setPassword(userPass);
+		owner.setTelephone(telephone);
+		owner.setOsex(sex);
+		
+		if(service.ownerAdd(owner)) {
+		System.out.println("注册成功：");
+		System.out.println("用户名：" + request.getParameter("username"));
+		System.out.println("密码：" + request.getParameter("password"));
+		System.out.println("邮箱：" + request.getParameter("email"));
+		System.out.println("联系电话：" + request.getParameter("telephone"));
+		System.out.println("性别：" + request.getParameter("sex"));
+		System.out.println("出生日期：" + request.getParameter("birthday"));
+//		Cookie cookie_username = new Cookie("cookie_username",request.getParameter("username"));
+//		Cookie cookie_password = new Cookie("cookie_password",request.getParameter("password"));
+//		response.addCookie(cookie_username);
+//		response.addCookie(cookie_password);
+		return "registerSuccess";
+		}
+		
+		System.out.println("注册失败");
+		return "registerFail";
+	}
 }
