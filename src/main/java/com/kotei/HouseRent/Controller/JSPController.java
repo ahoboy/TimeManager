@@ -12,7 +12,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.kotei.HouseRent.Entity.HouseEntity;
 import com.kotei.HouseRent.Entity.OwnerEntity;
+import com.kotei.HouseRent.Service.HouseService;
 import com.kotei.HouseRent.Service.OwnerService;
 import com.kotei.HouseRent.dao.OwnerDao;
 
@@ -21,6 +23,7 @@ public class JSPController {
 
 	@Autowired
 	OwnerService service;
+	
 	
 	@RequestMapping("/index")
 	public String index(Model model){
@@ -76,6 +79,7 @@ public class JSPController {
 		Cookie cookie_password = new Cookie("cookie_password",request.getParameter("password"));
 		response.addCookie(cookie_username);
 		response.addCookie(cookie_password);
+		System.out.println("登录成功");
 		return "index";
 	}
 	
@@ -111,4 +115,6 @@ public class JSPController {
 		System.out.println("注册失败");
 		return "registerFail";
 	}
+	
+	
 }
