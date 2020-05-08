@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 08/05/2020 10:04:28
+ Date: 08/05/2020 11:36:32
 */
 
 SET NAMES utf8mb4;
@@ -25,7 +25,7 @@ CREATE TABLE `house`  (
   `Hid` int(0) NOT NULL AUTO_INCREMENT,
   `Hname` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `Hprice` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `Hadress` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `Haddress` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `Hsize` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `Hflag` int(0) NOT NULL,
   `Hdesc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
@@ -67,5 +67,6 @@ INSERT INTO `owner` VALUES (4, '麻婆', 'mapo', '1234315354', '女');
 INSERT INTO `owner` VALUES (5, '艾米', 'aimi', '1563156345', '女');
 INSERT INTO `owner` VALUES (6, '琪亚娜', 'qiyana', '4534245646', '女');
 INSERT INTO `owner` VALUES (9, '香菜', 'xiangcai', '12514256589', 'female');
+INSERT INTO `owner` VALUES (14, '香菜', 'xiangcai', '12514256589', 'female');
 
 SET FOREIGN_KEY_CHECKS = 1;
