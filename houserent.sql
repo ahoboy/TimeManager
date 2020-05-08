@@ -11,7 +11,7 @@
  Target Server Version : 80020
  File Encoding         : 65001
 
- Date: 08/05/2020 11:36:32
+ Date: 08/05/2020 12:50:46
 */
 
 SET NAMES utf8mb4;
@@ -29,7 +29,7 @@ CREATE TABLE `house`  (
   `Hsize` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `Hflag` int(0) NOT NULL,
   `Hdesc` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
-  `Uid` int(0) NULL DEFAULT NULL,
+  `Oid` int(0) NULL DEFAULT NULL,
   PRIMARY KEY (`Hid`) USING BTREE,
   INDEX `Hid`(`Hid`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -43,6 +43,7 @@ INSERT INTO `house` VALUES (3, '忘忧阁', '222222', '飞音镇', '300', 0, '�
 INSERT INTO `house` VALUES (4, '凌月馆', '222222', '日川市', '200', 0, '无', 4);
 INSERT INTO `house` VALUES (5, '花果园', '555555', '道古市', '600', 0, '无', 5);
 INSERT INTO `house` VALUES (6, '七里香都', '888888', '西达镇', '700', 0, '无', 6);
+INSERT INTO `house` VALUES (8, '浪客栈', '555555', '银叶市', '两室两厅', 0, '快乐压缩聚集地', NULL);
 
 -- ----------------------------
 -- Table structure for owner
