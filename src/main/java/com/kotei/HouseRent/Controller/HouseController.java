@@ -1,5 +1,8 @@
 package com.kotei.HouseRent.Controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -9,7 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.kotei.HouseRent.Entity.HouseEntity;
+import com.kotei.HouseRent.Entity.PageBean;
 import com.kotei.HouseRent.Service.HouseService;
+
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 
 @Controller
 public class HouseController {
@@ -42,6 +49,23 @@ public class HouseController {
 			System.out.println("描述：" + request.getParameter("hdesc"));
 			return "index";
 		}
-		return "addHouse";
+		return "publishHouse";
 	}
+	
+	@RequestMapping(value="/rentHouse", method=RequestMethod.GET)
+	public String rentHouse(HttpServletRequest request, HttpServletResponse response){
+		System.out.println("进入租房页面");
+		PageBean<HouseEntity> pageBean = new PageBean<HouseEntity>();
+		List<HouseEntity> list = new ArrayList<HouseEntity>();
+		pageBean.setCurrentCount(1);
+		pageBean.setCurrentPage(1);
+		pageBean.setTotalCount(20);
+		pageBean.setTotalPage(2);
+		list = hservice.getAllHouse();
+		pageBean.setList(list);
+		request.setAttribute("pageBean", pageBean);
+		return "product_list";
+	}
+	
+	
 }

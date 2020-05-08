@@ -105,6 +105,6 @@ public class HouseEntity {
 		private String hdesc;
 	  
 		// 用户ID
-		@Column(name="Uid")
+		@Column(name="Oid")
 		private Integer uid;
 }

@@ -9,7 +9,6 @@ import com.kotei.HouseRent.dao.OwnerDao;
 @Service
 public class OwnerService {
 
-	//private static final String OwnerEntity = null;//如果没问题的话就删除此行
 	@Autowired
 	OwnerDao dao;
 	
