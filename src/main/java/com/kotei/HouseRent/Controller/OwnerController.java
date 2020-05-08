@@ -19,7 +19,7 @@ import com.kotei.HouseRent.Service.OwnerService;
 import com.kotei.HouseRent.dao.OwnerDao;
 
 @Controller
-public class JSPController {
+public class OwnerController {
 
 	@Autowired
 	OwnerService service;
